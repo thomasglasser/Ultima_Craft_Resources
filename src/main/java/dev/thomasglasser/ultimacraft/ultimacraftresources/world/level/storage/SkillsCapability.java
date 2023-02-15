@@ -14,6 +14,7 @@ public class SkillsCapability extends PlayerCapability
 
     public SkillsCapability(Player player) {
         super(player);
+        alchemyLevel = 0;
     }
 
     @Override
@@ -46,6 +47,6 @@ public class SkillsCapability extends PlayerCapability
     }
 
     public void setAlchemyLevel(byte alchemyLevel) {
-        this.alchemyLevel = alchemyLevel;
+        this.alchemyLevel = (byte) Math.min(alchemyLevel, 100);
     }
 }
